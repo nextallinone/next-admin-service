@@ -1,0 +1,52 @@
+[
+  {
+    "id": "00",
+    "name": "菜单",
+    "icon": "anticon-cloud",
+    "open": true
+  },
+  {
+    "id": "0010",
+    "mpid": "00",
+    "icon": "anticon-dashboard",
+    "name": "首页",
+    "open": true,
+    "route": "/dashboard"
+  },
+  {
+    "id": "90",
+    "icon": "anticon-setting",
+    "name": "系统管理"
+  },
+  {
+    "id": "9020",
+    "icon": "anticon-user",
+    "name": "系统用户",
+    "mpid": "90",
+    "route": "/system/users"
+  },
+  {
+    "id": "9030",
+    "name": "角色管理",
+    "mpid": "90",
+    "route": "/system/roles"
+  },
+  {
+    "id": "9040",
+    "name": "组织机构管理",
+    "mpid": "90",
+    "route": "/system/organizations"
+  },
+  {
+    "id": "9080",
+    "name": "字典表",
+    "mpid": "90",
+    "route": "/system/dicts"
+  },
+  {
+    "id": "9090",
+    "name": "审计日志",
+    "mpid": "90",
+    "route": "/system/audit-logs"
+  }
+]

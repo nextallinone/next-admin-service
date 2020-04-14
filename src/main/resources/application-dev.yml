@@ -1,0 +1,75 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api/
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/next?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: damnGFW
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: true
+  druid:
+    # 初始化配置
+    initial-size: 3
+    # 最小连接数
+    min-idle: 3
+    # 最大连接数
+    max-active: 15
+    # 获取连接超时时间
+    max-wait: 5000
+    # 连接有效性检测时间
+    time-between-eviction-runs-millis: 90000
+    # 最大空闲时间
+    min-evictable-idle-time-millis: 1800000
+    test-while-idle: true
+    test-on-borrow: false
+    test-on-return: false
+    validation-query: select 1
+  redis:
+    #数据库索引
+    database: 12
+    host: localhost
+    port: 6379
+    password:
+    #连接超时时间
+    timeout: 5000
+#登录图形验证码有效时间/分钟
+loginCode:
+  expiration: 2
+#jwt
+jwt:
+  header: token
+  # 令牌前缀
+  token-start-with: Bearer
+  # 必须使用最少88位的Base64对该令牌进行编码
+  base64-secret: ZmQ0ZGI5NjQ0MDQwY2I4MjMxY2Y3ZmI3MjdhN2ZmMjNhODViOTg1ZGE0NTBjMGM4NDA5NzYxMjdjOWMwYWRmZTBlZjlhNGY3ZTg4Y2U3YTE1ODVkZDU5Y2Y3OGYwZWE1NzUzNWQ2YjFjZDc0NGMxZWU2MmQ3MjY1NzJmNTE0MzI=
+  # 令牌过期时间 此处单位/毫秒 ，默认4小时，可在此网站生成 https://www.convertworld.com/zh-hans/time/milliseconds.html
+  token-validity-in-seconds: 14400000
+  # 在线用户key
+  online-key: online-token
+  # 验证码
+  code-key: code-key
+# 文件存储路径
+file:
+  path: /Users/vanish/var/dljj/fileUpload
+  avatar: /Users/vanish/var/dljj/avatar
+  # 文件大小 /M
+  maxSize: 100
+  avatarMaxSize: 5
+#密码加密传输，前端公钥加密，后端私钥解密
+rsa:
+  private_key: MIIBUwIBADANBgkqhkiG9w0BAQEFAASCAT0wggE5AgEAAkEA0vfvyTdGJkdbHkB8mp0f3FE0GYP3AYPaJF7jUd1M0XxFSE2ceK3k2kw20YvQ09NJKk+OMjWQl9WitG9pB6tSCQIDAQABAkA2SimBrWC2/wvauBuYqjCFwLvYiRYqZKThUS3MZlebXJiLB+Ue/gUifAAKIg1avttUZsHBHrop4qfJCwAI0+YRAiEA+W3NK/RaXtnRqmoUUkb59zsZUBLpvZgQPfj1MhyHDz0CIQDYhsAhPJ3mgS64NbUZmGWuuNKp5coY2GIj/zYDMJp6vQIgUueLFXv/eZ1ekgz2Oi67MNCk5jeTF2BurZqNLR3MSmUCIFT3Q6uHMtsB9Eha4u7hS31tj1UWE+D+ADzp59MGnoftAiBeHT7gDMuqeJHPL4b+kC+gzV4FGTfhR9q3tTbklZkD2A==
+
+fss:
+  alioss:
+    keyId: LTAI4Fii9JtPyJAMPeizRexP
+    keySecret: Vr6MOetFbG5os6JSnTyjU87o7ap0g8
+    endpoint: oss-cn-chengdu.aliyuncs.com
+    defaultBucket: flipped-oss
+
