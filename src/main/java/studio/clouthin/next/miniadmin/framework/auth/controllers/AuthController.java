@@ -19,14 +19,14 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import studio.clouthin.next.miniadmin.framework.auth.annotations.AnonymousAccess;
 import studio.clouthin.next.miniadmin.framework.auth.dto.vo.AuthUser;
-import studio.clouthin.next.miniadmin.framework.auth.dto.vo.JwtUser;
-import studio.clouthin.next.miniadmin.framework.auth.dto.vo.SecurityProperties;
-import studio.clouthin.next.miniadmin.framework.auth.filters.TokenProvider;
-import studio.clouthin.next.miniadmin.framework.auth.services.OnlineUserService;
 import studio.clouthin.next.shared.exceptions.BadRequestException;
 import studio.clouthin.next.shared.utils.RedisUtils;
 import studio.clouthin.next.shared.utils.SecurityUtils;
 import studio.clouthin.next.shared.utils.StringUtils;
+import studio.clouthink.next.ssointerceptor.auth.dtos.vo.JwtUser;
+import studio.clouthink.next.ssointerceptor.auth.dtos.vo.SecurityProperties;
+import studio.clouthink.next.ssointerceptor.auth.filters.TokenProvider;
+import studio.clouthink.next.ssointerceptor.auth.services.OnlineUserService;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;

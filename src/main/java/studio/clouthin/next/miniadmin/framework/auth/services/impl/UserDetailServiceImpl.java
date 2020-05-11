@@ -5,11 +5,11 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import studio.clouthin.next.miniadmin.framework.auth.dto.vo.JwtUser;
 import studio.clouthin.next.miniadmin.framework.auth.models.User;
 import studio.clouthin.next.miniadmin.framework.auth.repositories.UserRepository;
 import studio.clouthin.next.miniadmin.framework.auth.services.RoleService;
 import studio.clouthin.next.shared.exceptions.BadRequestException;
+import studio.clouthink.next.ssointerceptor.auth.dtos.vo.JwtUser;
 
 @Service("userDetailsService")
 @AllArgsConstructor

@@ -18,11 +18,12 @@ import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.mvc.method.RequestMappingInfo;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 import studio.clouthin.next.miniadmin.framework.auth.annotations.AnonymousAccess;
-import studio.clouthin.next.miniadmin.framework.auth.filters.JwtAccessDeniedHandler;
-import studio.clouthin.next.miniadmin.framework.auth.filters.JwtAuthenticationEntryPoint;
-import studio.clouthin.next.miniadmin.framework.auth.filters.TokenConfigurer;
-import studio.clouthin.next.miniadmin.framework.auth.filters.TokenProvider;
 import studio.clouthin.next.shared.SharedConfiguration;
+import studio.clouthink.next.ssointerceptor.SsoInterceptorConfiguration;
+import studio.clouthink.next.ssointerceptor.auth.filters.JwtAccessDeniedHandler;
+import studio.clouthink.next.ssointerceptor.auth.filters.JwtAuthenticationEntryPoint;
+import studio.clouthink.next.ssointerceptor.auth.filters.TokenConfigurer;
+import studio.clouthink.next.ssointerceptor.auth.filters.TokenProvider;
 
 import java.util.HashSet;
 import java.util.Map;
@@ -32,7 +33,7 @@ import java.util.Set;
  *
  */
 @Configuration
-@Import(SharedConfiguration.class)
+@Import({SharedConfiguration.class, SsoInterceptorConfiguration.class})
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
