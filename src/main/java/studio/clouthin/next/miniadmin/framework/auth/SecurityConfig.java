@@ -17,9 +17,10 @@ import org.springframework.web.filter.CorsFilter;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.mvc.method.RequestMappingInfo;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
-import studio.clouthin.next.miniadmin.framework.auth.annotations.AnonymousAccess;
 import studio.clouthin.next.shared.SharedConfiguration;
+import studio.clouthin.next.shared.utils.SpringContextHolder;
 import studio.clouthink.next.ssointerceptor.SsoInterceptorConfiguration;
+import studio.clouthink.next.ssointerceptor.auth.annotations.AnonymousAccess;
 import studio.clouthink.next.ssointerceptor.auth.filters.JwtAccessDeniedHandler;
 import studio.clouthink.next.ssointerceptor.auth.filters.JwtAuthenticationEntryPoint;
 import studio.clouthink.next.ssointerceptor.auth.filters.TokenConfigurer;
@@ -122,5 +123,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private TokenConfigurer securityConfigurerAdapter() {
         return new TokenConfigurer(tokenProvider);
+    }
+
+
+    @Bean
+    public SpringContextHolder springContextHolder() {
+        return new SpringContextHolder();
     }
 }
